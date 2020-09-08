@@ -257,8 +257,9 @@ class Hub(SPCommunicator):
 
         self.has_outerbound_spokes = len(self.outerbound_spoke_indices) > 0
         self.has_innerbound_spokes = len(self.innerbound_spoke_indices) > 0
-        self.has_nonant_spokes = len(self.nonant_spoke_indices) > 0
-        self.has_w_spokes = len(self.w_spoke_indices) > 0
+        # An extension might set or reset the should_send
+        self.should_send_nonants = len(self.nonant_spoke_indices) > 0
+        self.should_send_ws = len(self.w_spoke_indices) > 0
 
     def make_windows(self):
         if self._windows_constructed:
@@ -396,9 +397,9 @@ class PHHub(Hub):
         """
             Manages communication with Spokes
         """
-        if self.has_w_spokes:
+        if self.should_send_ws:
             self.send_ws()
-        if self.has_nonant_spokes:
+        if self.should_send_nonants:
             self.send_nonants()
         if self.has_outerbound_spokes:
             self.receive_outerbounds()
