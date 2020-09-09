@@ -9,7 +9,7 @@ optional. The`cb_data` option specifies data that is passed through
 from the calling program all the way to the scenario creator function
 (it is callded `cb_data`). This can be of any type, and might give,
 e.g., a data directory name or probability distribution information.
-The function returns an instantiated model for the instance. I.e.,
+The function returns an instantiated `Pyomo` model for the instance. I.e.,
 it either creates a `ConcreteModel` or else it creates and instantiates
 an `AbstractModel`.
 

@@ -15,6 +15,8 @@ Run `setup.py` from the mpi-sppy directory.
    :maxdepth: 2
 
    scenario_creator.rst
+   extensions.rst
+   tips.rst
    aph.rst
    api.rst
 
