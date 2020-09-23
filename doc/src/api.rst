@@ -91,7 +91,7 @@ spcommunicator
 
 This class handles communication between ranks.
 
-.. automodule:: mpisppy.cylinder.spcommunicator
+.. automodule:: mpisppy.cylinders.spcommunicator
    :members:
    :undoc-members:
    :show-inheritance:
@@ -99,7 +99,7 @@ This class handles communication between ranks.
 spoke
 ^^^^^
 
-.. automodule:: mpisppy.cylinder.spoke
+.. automodule:: mpisppy.cylinders.spoke
    :members:
    :undoc-members:
    :show-inheritance:
@@ -107,7 +107,7 @@ spoke
 hub
 ^^^
 
-.. automodule:: mpisppy.cylinder.hub
+.. automodule:: mpisppy.cylinders.hub
    :members:
    :undoc-members:
    :show-inheritance:
