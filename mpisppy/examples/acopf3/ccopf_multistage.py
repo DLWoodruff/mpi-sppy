@@ -54,7 +54,10 @@ def _md_dict(cb_data):
     l = p.find("'")
     r = p.find("'", l+1)
     egretrootpath = p[l+1:r]
-    test_case = egretrootpath+cb_data["epath"]
+    if cb_data["epath"][0] != os.sep:
+        test_case = os.path.join(egretrootpath, cb_data["epath"])
+    else:
+        test_case = os.path.join(egretrootpath, cb_data["epath"][1:])
 
     # look at egret/data/model_data.py for the format specification of md_dict
     return create_ModelData(test_case)
