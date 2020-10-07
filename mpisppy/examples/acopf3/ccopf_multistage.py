@@ -198,13 +198,13 @@ def pysp2_callback(scenario_name,
                 scen_model=inst, parent_name=parent_name))
             parent_name = enode.Name
     
-    inst._PySPnode_list = node_list
-    # Optionally assign probability to PySP_prob 
+    inst._PySPnode_list = node_list 
     inst.PySP_prob = 1 / etree.numscens
     # solve it so subsequent code will have a good start
     if solver is not None:
         print(f"scenario creation callback is solving {scenario_name} on rank {rank}")
-        solver.solve(inst)  #, tee=True) #symbolic_solver_labels=True, keepfiles=True)
+        tee = cb_data["tee"] if "tee" in cb_data else False
+        solver.solve(inst, tee=tee)   #symbolic_solver_labels=True, keepfiles=True)
 
     # attachments
     inst._enodes = enodes
