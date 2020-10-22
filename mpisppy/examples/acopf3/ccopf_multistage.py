@@ -114,6 +114,8 @@ def pysp2_callback(scenario_name,
                                format(this_branch[0], scenario_name))
     def _egret_model(md_dict):
         # the exact acopf model is hard-wired here:
+        md_dict.data["system"]["load_mismatch_cost"] = 10000      # $/MW
+        md_dict.data["system"]["q_load_mismatch_cost"] = 10000  # $/MW    
         if not convex_relaxation:
             pyomod, mdict = eac.create_riv_acopf_model(md_dict, 
                                             include_feasibility_slack=True)
