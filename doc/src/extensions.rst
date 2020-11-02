@@ -48,12 +48,12 @@ xhat
 ^^^^
 
 Most of the xhat methods can be used as an extension instead of being used
-as a spoke, when that is desired (e.g. for seral applications).
+as a spoke, when that is desired (e.g. for serial applications).
 
 WXBarWriter and WXBarReader
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There is an extension to write xbar and W values and another to read them.
-An example of their use is shwon in ``mpisppy.examples.sizes.sizes_demo.py``
+An example of their use is shown in ``mpisppy.examples.sizes.sizes_demo.py``
 
 
