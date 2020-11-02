@@ -103,7 +103,6 @@ if __name__ == "__main__":
          print ("Trival bound =",tbound)
 
     print("Quitting early.")
-    quit()
 
     ############ test W and xbar writers and special joint reader  ############
     from mpisppy.utils.wxbarwriter import WXBarWriter
@@ -117,8 +116,7 @@ if __name__ == "__main__":
     PHoptions["W_and_xbar_writer"] =  {"Wcsvdir": "Wdir",
                                        "xbarcsvdir": "xbardir"}
 
-    conv = newph.ph_main(rho_setter=_rho_setter, 
-                         PH_extensions=WXBarWriter)
+    conv, obj, tbound = newph.ph_main()
     #####
     from mpisppy.utils.wxbarreader import WXBarReader
     
@@ -131,8 +129,9 @@ if __name__ == "__main__":
     PHoptions["W_and_xbar_reader"] =  {"Wcsvdir": "Wdir",
                                        "xbarcsvdir": "xbardir"}
 
-    conv = newph.ph_main(rho_setter=_rho_setter, 
-                         PH_extensions=WXBarReader)
+    conv, obj, tbound = newph.ph_main()
+
+    quit()
     ############################# test xhatspecific ###############
     from mpisppy.xhatspecific import XhatSpecific
     print ("... testing xhat specific....")
