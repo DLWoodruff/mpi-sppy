@@ -2,7 +2,6 @@
 # This software is distributed under the 3-clause BSD License.
 # updated 23 April 2020
 # Serial (not cylinders)
-# BTW: the name test_sizes is misleading. This is not a unittest.
 
 import os
 import sys
@@ -25,7 +24,7 @@ ScenCount = 10  # 3 or 10
 if __name__ == "__main__":
 
     if len(sys.argv) != 2:
-        print("usage: python test_sizes.py solvername")
+        print("usage: python sizes_demo.py solvername")
         quit()
     PHoptions = {}
     PHoptions["solvername"] = sys.argv[1]
